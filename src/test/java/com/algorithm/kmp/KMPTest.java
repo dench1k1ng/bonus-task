@@ -10,7 +10,6 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-
 @DisplayName("KMP Algorithm Test Suite")
 class KMPTest {
 
@@ -270,6 +269,67 @@ class KMPTest {
 
             assertFalse(matches.isEmpty(), "Should find matches in large text");
             assertTrue(timeMs < 100, "Should complete within 100ms for large text");
+        }
+
+        @Test
+        @DisplayName("Should handle worst-case pattern efficiently")
+        void testWorstCasePattern() {
+            // Create a text and pattern that would cause worst-case behavior in naive
+            // algorithm
+            String text = "A".repeat(10000) + "B";
+            String pattern = "A".repeat(50) + "B";
+
+            long startTime = System.nanoTime();
+            List<Integer> matches = KMP.search(text, pattern);
+            long endTime = System.nanoTime();
+
+            double timeMs = (endTime - startTime) / 1_000_000.0;
+
+            assertEquals(1, matches.size(), "Should find exactly one match");
+            assertEquals(10000 - 50, matches.get(0), "Should find match at correct position");
+            assertTrue(timeMs < 50, "Should complete within 50ms even for worst-case input");
+        }
+
+        @Test
+        @DisplayName("Should perform well with many overlapping matches")
+        void testManyOverlappingMatches() {
+            // Create text with many overlapping pattern occurrences
+            String text = "A".repeat(5000);
+            String pattern = "AA";
+
+            long startTime = System.nanoTime();
+            List<Integer> matches = KMP.search(text, pattern);
+            long endTime = System.nanoTime();
+
+            double timeMs = (endTime - startTime) / 1_000_000.0;
+
+            assertEquals(4999, matches.size(), "Should find all overlapping matches");
+            assertTrue(timeMs < 30, "Should handle overlapping matches efficiently");
+        }
+
+        @Test
+        @DisplayName("Should scale well with pattern length")
+        void testPatternLengthScaling() {
+            String baseText = generateText(10000, "test");
+
+            // Test with different pattern lengths
+            String[] patterns = { "a", "abc", "testing", "longerpattern", "verylongpatternstring" };
+
+            for (String pattern : patterns) {
+                long startTime = System.nanoTime();
+                List<Integer> matches = KMP.search(baseText, pattern);
+                long endTime = System.nanoTime();
+
+                double timeMs = (endTime - startTime) / 1_000_000.0;
+
+                // Should complete quickly regardless of pattern length
+                assertTrue(timeMs < 50,
+                        String.format("Pattern '%s' (length %d) should complete within 50ms, took %.2fms",
+                                pattern, pattern.length(), timeMs));
+
+                // Verify search actually ran (matches should be non-null)
+                assertNotNull(matches, "Search should return valid result list");
+            }
         }
 
         /**

@@ -44,7 +44,7 @@ kmp-string-algorithm/
 # Clean and compile the project
 mvn clean compile
 
-# Run all JUnit tests (30+ test cases)
+# Run all JUnit tests (33+ test cases)
 mvn test
 
 # Run the interactive demonstration
@@ -78,7 +78,7 @@ mvn package && java -jar target/kmp-string-algorithm-1.0.0.jar
 
 ## 🧪 Test Cases
 
-The implementation includes comprehensive testing with **30+ individual test cases**:
+The implementation includes comprehensive testing with **33+ individual test cases**:
 
 ### 1. Basic Functionality Tests (5 tests)
 - **Short String Test** (19 chars): `"ABABDABACDABABCABAB"` with pattern `"ABABCABAB"`
@@ -102,9 +102,12 @@ The implementation includes comprehensive testing with **30+ individual test cas
   - `"AAAA"` → `[0,1,2,3]`
   - `"ABCDE"` → `[0,0,0,0,0]` (no repeating prefix-suffix)
 
-### 4. Performance Tests (2 tests)
-- Linear time complexity validation
+### 4. Performance Tests (5 tests)
+- Linear time complexity validation with different text sizes
 - Large text efficiency (50k+ characters)
+- Worst-case pattern handling (repetitive patterns)
+- Overlapping matches performance
+- Pattern length scaling validation
 
 ### 5. Algorithm-Specific Tests (3 tests)
 - Self-overlapping pattern handling
@@ -249,7 +252,7 @@ This project fully satisfies all assignment requirements:
 ✅ **Algorithm Implementation**: Complete KMP with LPS preprocessing  
 ✅ **Three Test Cases**: Short (19), Medium (329), Long (1131) character texts  
 ✅ **Maven Build System**: Full Maven project structure and configuration  
-✅ **JUnit Testing**: Comprehensive test suite with 30+ test cases  
+✅ **JUnit Testing**: Comprehensive test suite with 33+ test cases  
 ✅ **Documentation**: Detailed README and performance analysis  
 ✅ **Version Control**: 7 meaningful commits demonstrating development process  
 ✅ **Performance Analysis**: O(n+m) complexity validation with empirical results  
