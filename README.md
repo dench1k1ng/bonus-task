@@ -2,11 +2,11 @@
 
 **Knuth-Morris-Pratt Pattern Matching Algorithm Implementation in Java**
 
-## 🎯 Project Overview
+##  Project Overview
 
 This project implements the Knuth-Morris-Pratt (KMP) string matching algorithm, which efficiently finds all occurrences of a pattern within a text string in O(n+m) time complexity.
 
-## 🔍 Why KMP Algorithm?
+##  Why KMP Algorithm?
 
 KMP was chosen as the optimal string matching algorithm because:
 
@@ -16,7 +16,7 @@ KMP was chosen as the optimal string matching algorithm because:
 - **Optimal Preprocessing**: Smart failure function prevents redundant comparisons
 - **Practical Efficiency**: Excellent real-world performance
 
-## 📁 Maven Project Structure
+##  Maven Project Structure
 
 ```
 kmp-string-algorithm/
@@ -32,7 +32,7 @@ kmp-string-algorithm/
         └── KMPTest.java       # JUnit test suite
 ```
 
-## 🚀 Quick Start
+##  Quick Start
 
 ### Prerequisites
 - Java 11 or higher
@@ -76,7 +76,7 @@ mvn test -X
 mvn package && java -jar target/kmp-string-algorithm-1.0.0.jar
 ```
 
-## 🧪 Test Cases
+##  Test Cases
 
 The implementation includes comprehensive testing with **33+ individual test cases**:
 
@@ -117,9 +117,9 @@ The implementation includes comprehensive testing with **33+ individual test cas
 ### 6. Parametrized Tests (6 tests)
 - Automated testing with various input combinations
 
-## 📊 Algorithm Complexity
+##  Algorithm Complexity
 
-### Time Complexity: O(n + m) ✨
+### Time Complexity: O(n + m) 
 - **n**: Length of the text
 - **m**: Length of the pattern
 - **Preprocessing**: O(m) to build LPS array
@@ -152,7 +152,7 @@ Our implementation consistently demonstrates **sub-millisecond** performance:
 | 5,000 chars | 4 chars | < 1 ms | ✅ Excellent |
 | 10,000 chars | 4 chars | < 2 ms | ✅ Excellent |
 
-## 💡 Usage Example
+##  Usage Example
 
 ```java
 import com.algorithm.kmp.KMP;
@@ -191,7 +191,7 @@ mvn -version   # Check Maven uses correct Java
 - Reimport dependencies
 - Check project SDK settings
 
-## 📈 Performance Results
+##  Performance Results
 
 | Test Case | Text Length | Pattern Length | Execution Time | Status |
 |-----------|-------------|----------------|----------------|---------|
@@ -201,7 +201,7 @@ mvn -version   # Check Maven uses correct Java
 
 All tests demonstrate the expected O(n+m) linear time complexity.
 
-## 📚 Algorithm Details
+##  Algorithm Details
 
 ### LPS Array (Longest Proper Prefix which is also Suffix)
 
@@ -221,7 +221,7 @@ LPS:      0 0 1 2 0 1 2 3 4
 3. **Optimal Preprocessing**: Build LPS array in O(m) time
 4. **Memory Efficient**: Only O(m) additional space required
 
-## 🏗️ Build Configuration
+##  Build Configuration
 
 The project uses Maven with the following key configurations:
 
@@ -231,29 +231,10 @@ The project uses Maven with the following key configurations:
 - **Packaging**: JAR with manifest
 - **Main Class**: com.algorithm.kmp.KMPDemo
 
-## 🧑‍💻 Author
+##  Author
 
 **Author**: Denis  
 Computer Science Student  
 KMP Algorithm Implementation Assignment  
 November 15, 2025
 
----
-
-**Repository**: `https://github.com/YOUR_USERNAME/kmp-string-algorithm`  
-**License**: Educational Use  
-**Course**: String Algorithms & Pattern Matching  
-**Institution**: [Your University]
-
-### 📝 Assignment Compliance
-
-This project fully satisfies all assignment requirements:
-
-✅ **Algorithm Implementation**: Complete KMP with LPS preprocessing  
-✅ **Three Test Cases**: Short (19), Medium (329), Long (1131) character texts  
-✅ **Maven Build System**: Full Maven project structure and configuration  
-✅ **JUnit Testing**: Comprehensive test suite with 33+ test cases  
-✅ **Documentation**: Detailed README and performance analysis  
-✅ **Version Control**: 7 meaningful commits demonstrating development process  
-✅ **Performance Analysis**: O(n+m) complexity validation with empirical results  
-✅ **Code Quality**: Professional Java code with proper documentation
