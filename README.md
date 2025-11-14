@@ -41,20 +41,39 @@ kmp-string-algorithm/
 ### Build Commands
 
 ```bash
-# Clean and compile
+# Clean and compile the project
 mvn clean compile
 
-# Run tests
+# Run all JUnit tests (30+ test cases)
 mvn test
 
-# Run demonstration
+# Run the interactive demonstration
 mvn exec:java
 
-# Package JAR
+# Package into executable JAR
 mvn package
 
-# Clean everything
+# Run tests and create JAR in one step
+mvn clean install
+
+# Clean all generated files
 mvn clean
+```
+
+### Quick Test Commands
+
+```bash
+# Just compile and test
+mvn clean test
+
+# Run specific test class
+mvn test -Dtest=KMPTest
+
+# Run with verbose output
+mvn test -X
+
+# Package and run demo
+mvn package && java -jar target/kmp-string-algorithm-1.0.0.jar
 ```
 
 ## 🧪 Test Cases

@@ -2,6 +2,7 @@ package com.algorithm.kmp;
 
 import java.util.List;
 
+
 public class KMPDemo {
 
     public static void main(String[] args) {
@@ -21,6 +22,7 @@ public class KMPDemo {
         System.out.println("=".repeat(80) + "\n");
     }
 
+
     private static void demonstrateShortString() {
         System.out.println("### DEMO 1: SHORT STRING TEST ###\n");
 
@@ -38,6 +40,7 @@ public class KMPDemo {
 
         KMP.displayResults(text, pattern, matches, endTime - startTime);
     }
+
 
     private static void demonstrateMediumString() {
         System.out.println("### DEMO 2: MEDIUM STRING TEST ###\n");
@@ -61,6 +64,7 @@ public class KMPDemo {
 
         KMP.displayResults(text, pattern, matches, endTime - startTime);
     }
+
 
     private static void demonstrateLongString() {
         System.out.println("### DEMO 3: LONG STRING TEST ###\n");
@@ -95,6 +99,7 @@ public class KMPDemo {
         KMP.displayResults(text, pattern, matches, endTime - startTime);
     }
 
+  
     private static void demonstrateEdgeCases() {
         System.out.println("### DEMO 4: EDGE CASES ###\n");
 
@@ -119,6 +124,7 @@ public class KMPDemo {
         System.out.println("\nAll edge cases completed!\n");
     }
 
+ 
     private static void testCase(String text, String pattern, String expected) {
         long startTime = System.nanoTime();
         List<Integer> matches = KMP.search(text, pattern);
@@ -148,6 +154,7 @@ public class KMPDemo {
         }
     }
 
+
     private static void demonstratePerformance() {
         System.out.println("### DEMO 5: PERFORMANCE ANALYSIS ###\n");
 
@@ -157,6 +164,7 @@ public class KMPDemo {
 
         String pattern = "test";
 
+        // Test with different sizes
         performanceTest(100, pattern);
         performanceTest(500, pattern);
         performanceTest(1000, pattern);
@@ -165,6 +173,7 @@ public class KMPDemo {
 
         System.out.println("\nAll performance tests demonstrate linear O(n+m) behavior!\n");
     }
+
 
     private static void performanceTest(int textSize, String pattern) {
         StringBuilder sb = new StringBuilder();
